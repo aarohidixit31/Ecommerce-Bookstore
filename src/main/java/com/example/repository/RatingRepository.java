@@ -10,7 +10,7 @@ import com.example.model.Rating;
 
 public interface RatingRepository extends JpaRepository<Rating,Long> 
 {
-    @Query("Select r from Rating where r.product.id=:productId" )
+    @Query("Select r from Rating r where r.product.id=:productId" )
     public List<Rating> getAllProductsRating(@Param("productId") Long productId);
 
 }
